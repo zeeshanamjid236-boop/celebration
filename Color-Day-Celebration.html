@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Color Day Celebration | First-trail Fun Club</title>
+<style>
+:root{--ink:#30234a;--pink:#ff4fa3;--purple:#8052e8;--yellow:#ffc83d;--blue:#37a8ff;--green:#20c997}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial, sans-serif;color:var(--ink);background:#fff8f4}
+header{padding:22px 16px;text-align:center;color:white;background:linear-gradient(120deg,#ff4fa3,#8052e8,#37a8ff)}
+header .logo{font-size:48px}header h1{margin:5px 0;font-size:clamp(27px,5vw,44px)}header p{margin:6px 0 0}
+main{max-width:1050px;margin:22px auto;padding:0 14px}
+.hero{position:relative;overflow:hidden;text-align:center;padding:35px 18px;border-radius:24px;background:linear-gradient(135deg,#ffe0ef,#eee5ff,#dff5ff);box-shadow:0 12px 30px #6542a51a}
+.hero h2{font-size:clamp(25px,4vw,38px);margin:0 0 10px}.hero p{font-size:17px;max-width:650px;margin:0 auto 18px;line-height:1.6}
+.btn{border:0;border-radius:30px;padding:12px 20px;font-weight:bold;background:#30234a;color:white;cursor:pointer;box-shadow:0 5px 14px #30234a22}.btn:hover{transform:translateY(-2px)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin:18px 0}
+.card{background:white;border:1px solid #eee5f5;border-radius:18px;padding:19px;box-shadow:0 6px 20px #30234a0b}
+.card h3{margin:0 0 9px}.muted{color:#77718b;font-size:14px;line-height:1.5}
+.swatches{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:14px}
+.swatch{border:0;border-radius:13px;min-height:75px;color:#30234a;font-weight:bold;cursor:pointer;box-shadow:inset 0 0 0 1px #0000000b}
+.swatch:focus{outline:3px solid #30234a;outline-offset:2px}
+#selectedColor{height:14px;border-radius:20px;background:linear-gradient(90deg,#ff4fa3,#ffc83d,#20c997,#37a8ff,#8052e8);margin-top:14px}
+.activity{display:flex;gap:12px;align-items:flex-start}.activity span{font-size:30px}
+input,textarea{width:100%;padding:11px;border:1px solid #ded7e9;border-radius:10px;margin:7px 0 12px;font:inherit}
+textarea{min-height:85px;resize:vertical}
+.message{background:#fff5c9;border:1px solid #ffe58a;border-radius:12px;padding:12px;margin-top:10px;display:none}
+footer{text-align:center;padding:25px;color:#817992}
+#partyCanvas{position:fixed;inset:0;pointer-events:none;width:100%;height:100%;z-index:5}
+#toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);background:#30234a;color:white;padding:12px 18px;border-radius:30px;display:none;z-index:10}
+@media(max-width:520px){.swatches{grid-template-columns:repeat(2,1fr)}.hero{padding:27px 15px}}
+</style>
+</head>
+<body>
+<canvas id="partyCanvas"></canvas>
+<header>
+  <div class="logo">🎨🌈</div>
+  <h1>COLOR DAY CELEBRATION</h1>
+  <p>First-trail Fun Club · A day full of colors, smiles and creativity!</p>
+</header>
+<main>
+  <section class="hero">
+    <h2>Let’s Make the Day Colorful! ✨</h2>
+    <p>Wear your favorite color, bring your brightest smile and celebrate friendship, creativity and happiness together.</p>
+    <button class="btn" onclick="celebrate()">🎉 Start Celebration</button>
+  </section>
+
+  <section class="grid">
+    <article class="card">
+      <h3>🌈 Choose Your Color</h3>
+      <p class="muted">Tap your favorite color and see your celebration message.</p>
+      <div class="swatches">
+        <button class="swatch" style="background:#ffb6d5" onclick="chooseColor('Pink','#ffb6d5','Kindness makes everything beautiful! 💗')">💗 Pink</button>
+        <button class="swatch" style="background:#ffe27a" onclick="chooseColor('Yellow','#ffe27a','Shine bright and spread happiness! 💛')">💛 Yellow</button>
+        <button class="swatch" style="background:#a9edce" onclick="chooseColor('Green','#a9edce','Grow, learn and stay fresh! 💚')">💚 Green</button>
+        <button class="swatch" style="background:#a9d9ff" onclick="chooseColor('Blue','#a9d9ff','Dream big like the endless sky! 💙')">💙 Blue</button>
+        <button class="swatch" style="background:#d8c1ff" onclick="chooseColor('Purple','#d8c1ff','Be creative and wonderfully unique! 💜')">💜 Purple</button>
+        <button class="swatch" style="background:#ffc39c" onclick="chooseColor('Orange','#ffc39c','Bring energy and excitement! 🧡')">🧡 Orange</button>
+        <button class="swatch" style="background:#ddd" onclick="chooseColor('White','#eeeeee','Peace, friendship and new beginnings! 🤍')">🤍 White</button>
+        <button class="swatch" style="background:#333;color:white" onclick="chooseColor('Black','#333333','Be bold, confident and brilliant! 🖤')">🖤 Black</button>
+      </div>
+      <div id="selectedColor"></div>
+      <p id="colorMessage" class="muted">Your color message will appear here.</p>
+    </article>
+
+    <article class="card">
+      <h3>🎊 Celebration Activities</h3>
+      <div class="activity"><span>👕</span><div><b>Color Dress-Up</b><p class="muted">Come dressed in your favorite color.</p></div></div>
+      <div class="activity"><span>🖌️</span><div><b>Creative Art Corner</b><p class="muted">Make a colorful drawing or poster.</p></div></div>
+      <div class="activity"><span>📸</span><div><b>Color Photo Booth</b><p class="muted">Take fun memories with your friends.</p></div></div>
+      <div class="activity"><span>🏆</span><div><b>Best Color Outfit</b><p class="muted">Celebrate creativity and confidence.</p></div></div>
+    </article>
+  </section>
+
+  <section class="grid">
+    <article class="card">
+      <h3>💌 Share Your Color Day Wish</h3>
+      <p class="muted">Write a short wish for your classmates.</p>
+      <input id="studentName" maxlength="35" placeholder="Your name">
+      <textarea id="wish" maxlength="180" placeholder="My Color Day wish is..."></textarea>
+      <button class="btn" onclick="postWish()">Share Wish</button>
+      <div id="wishStatus" class="message"></div>
+    </article>
+    <article class="card">
+      <h3>📜 Color Day Promise</h3>
+      <p class="muted">Today we promise to...</p>
+      <ul>
+        <li>Respect every color and every person.</li>
+        <li>Spread kindness, not negativity.</li>
+        <li>Keep our school clean and beautiful.</li>
+        <li>Celebrate safely and include everyone.</li>
+      </ul>
+      <button class="btn" onclick="celebrate()">🌟 Make Some Magic</button>
+    </article>
+  </section>
+  <section class="card">
+    <h3>💖 A Colorful Message</h3>
+    <p style="font-size:18px;line-height:1.6;margin-bottom:0">“Life is like a rainbow. Every color has its own beauty — and together, we make something amazing!”</p>
+  </section>
+</main>
+<footer>Made with ❤️ for First-trail Fun Club · Keep smiling, keep shining!</footer>
+<div id="toast"></div>
+<script>
+function chooseColor(name,color,message){
+ document.getElementById('selectedColor').style.background=color;
+ document.getElementById('colorMessage').textContent=name+': '+message;
+}
+function toast(msg){
+ const t=document.getElementById('toast');t.textContent=msg;t.style.display='block';
+ setTimeout(()=>t.style.display='none',2500);
+}
+function postWish(){
+ const name=document.getElementById('studentName').value.trim();
+ const wish=document.getElementById('wish').value.trim();
+ const box=document.getElementById('wishStatus');
+ if(!name||!wish){box.textContent='Please enter your name and wish first.';box.style.display='block';return;}
+ box.textContent='🌈 '+name+' says: '+wish;
+ box.style.display='block';
+ document.getElementById('wish').value='';
+}
+function celebrate(){
+ const canvas=document.getElementById('partyCanvas'),ctx=canvas.getContext('2d');
+ canvas.width=innerWidth;canvas.height=innerHeight;
+ const colors=['#ff4fa3','#ffc83d','#20c997','#37a8ff','#8052e8','#ff8b45'];
+ const bits=Array.from({length:170},()=>({x:Math.random()*canvas.width,y:-Math.random()*canvas.height,r:3+Math.random()*5,c:colors[Math.floor(Math.random()*colors.length)],v:2+Math.random()*4,a:Math.random()*6}));
+ let frames=0;
+ function draw(){
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  bits.forEach(b=>{b.y+=b.v;b.x+=Math.sin(b.a+=.04)*1.4;ctx.fillStyle=b.c;ctx.fillRect(b.x,b.y,b.r,b.r*1.7)});
+  if(++frames<130)requestAnimationFrame(draw);else ctx.clearRect(0,0,canvas.width,canvas.height);
+ }
+ draw();toast('🎉 Happy Color Day! Let the colors shine!');
+}
+</script>
+</body>
+</html>
