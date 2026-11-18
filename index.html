@@ -1,167 +1,278 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Color Day Celebration</title>
+<title>For Mehak Shahzadi ❤️</title>
 <style>
-:root{--ink:#282044;--pink:#ff4fa3;--purple:#7657ff;--yellow:#ffd84d;--cyan:#55dff2}
-*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:linear-gradient(135deg,#fff0f7,#f1edff 45%,#e7fbff);min-height:100vh}
-header{text-align:center;padding:48px 18px 30px;background:linear-gradient(120deg,#ff5ca8,#8a5cff,#28cbe0);color:white}
-header h1{font-size:clamp(2.2rem,7vw,4.5rem);margin:0 0 12px;text-shadow:0 4px 12px #0002}header p{font-size:1.08rem;margin:0}
-main{max-width:1050px;margin:24px auto;padding:0 16px 50px}.panel{background:#ffffffdf;border:1px solid #fff;border-radius:24px;padding:24px;margin:18px 0;box-shadow:0 12px 35px #5c3c8520}
-h2{margin:0 0 16px;color:#6745d8}.colors{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:12px}
-.color{border:0;border-radius:16px;padding:18px 8px;color:#241b39;font-weight:800;cursor:pointer;transition:.2s}.color:hover{transform:translateY(-4px) scale(1.02)}
-#chosen{font-weight:bold;margin-top:14px;min-height:24px}
-form{display:grid;gap:12px}input,textarea{width:100%;padding:14px;border:1px solid #d9d2ee;border-radius:12px;font:inherit;background:white}textarea{min-height:95px;resize:vertical}
-button.submit{border:0;border-radius:13px;padding:14px 20px;background:linear-gradient(90deg,#ff4fa3,#7657ff);color:white;font-size:1rem;font-weight:bold;cursor:pointer}
-#status{min-height:24px;font-weight:bold}.wish-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}.wish{background:linear-gradient(135deg,#fff1f8,#f2efff);padding:16px;border-radius:15px;border-left:5px solid #ff66aa;overflow-wrap:anywhere}.wish strong{display:block;margin-bottom:7px}.wish small{color:#766b8e}
-.activities{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}.activity{padding:17px;border-radius:16px;background:#f4f0ff}.activity b{display:block;margin-bottom:6px}
-footer{text-align:center;padding:20px;color:#706482}
-.confetti{position:fixed;top:-20px;width:10px;height:16px;pointer-events:none;z-index:9;animation:fall 3.2s linear forwards}
-@keyframes fall{to{transform:translateY(110vh) rotate(720deg);opacity:.2}}
-@media(max-width:600px){header{padding-top:36px}.panel{padding:18px}}
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Poppins:wght@300;400;600&display=swap');
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--pink:#ff75a8;--gold:#f6d69a;--white:#fff0f6}
+body{
+ background:#09030d;color:white;font-family:Poppins,sans-serif;
+ min-height:100vh;overflow-x:hidden;
+}
+#universe{position:fixed;inset:0;z-index:-1;background:
+ radial-gradient(ellipse at 50% 100%,#54152e 0%,transparent 60%),
+ radial-gradient(ellipse at 10% 10%,#29102e,transparent 55%),
+ #09030d}
+#particles{position:fixed;inset:0;pointer-events:none;z-index:5}
+.star{position:absolute;width:3px;height:3px;background:#fff;
+ border-radius:50%;box-shadow:0 0 12px #ff9ac2;
+ animation:twinkle 2s infinite alternate}
+@keyframes twinkle{to{opacity:.15;transform:scale(.4)}}
+.screen{
+ min-height:100svh;display:none;align-items:center;justify-content:center;
+ flex-direction:column;text-align:center;padding:35px 18px;
+ animation:enter 1s ease;
+}
+.screen.active{display:flex}
+@keyframes enter{from{opacity:0;transform:translateY(25px)}
+to{opacity:1;transform:translateY(0)}}
+.eyebrow{color:var(--gold);letter-spacing:5px;font-size:11px;text-transform:uppercase}
+h1,h2{font-family:'Cormorant Garamond',serif}
+h1{font-size:clamp(45px,9vw,90px);line-height:1.05;
+ color:#ffc0d8;text-shadow:0 0 30px #ff4c92}
+h2{font-size:clamp(35px,7vw,55px);color:#ffc2dc;margin:18px 0}
+p{line-height:1.9;color:#f5d9e5}
+.small{font-size:13px;color:#cbaabb;letter-spacing:2px}
+.glass{
+ width:min(680px,95%);padding:35px 25px;
+ border:1px solid #ffb4d444;border-radius:30px;
+ background:linear-gradient(135deg,#ffffff12,#ffffff04);
+ backdrop-filter:blur(18px);
+ box-shadow:0 0 60px #ff43851b,inset 0 0 30px #fff1;
+}
+button{
+ border:1px solid #ffbad5;
+ padding:14px 26px;border-radius:40px;
+ background:linear-gradient(120deg,#ff4f91,#b51c63);
+ color:white;font-weight:600;letter-spacing:1px;
+ cursor:pointer;margin:10px;transition:.3s;
+ box-shadow:0 0 20px #ff438544;
+}
+button:hover{transform:scale(1.08);box-shadow:0 0 35px #ff4385}
+.outline{background:#ffffff0b}
+.rose{
+ font-size:100px;filter:drop-shadow(0 0 25px #ff3c86);
+ animation:rose 4s ease-in-out infinite;
+}
+@keyframes rose{50%{transform:rotate(10deg) scale(1.12)}}
+.heart{
+ font-size:100px;
+ filter:drop-shadow(0 0 30px #ff287f);
+ animation:beat 1.3s infinite;
+}
+@keyframes beat{0%,100%{transform:scale(1)}
+15%{transform:scale(1.2)}30%{transform:scale(1)}
+45%{transform:scale(1.13)}}
+.envelope{
+ width:180px;height:115px;position:relative;
+ background:linear-gradient(140deg,#ff92b7,#b92865);
+ margin:40px auto;cursor:pointer;
+ box-shadow:0 0 35px #ff478b66;
+ border-radius:8px;
+}
+.envelope:before{
+ content:"";position:absolute;inset:0;
+ background:#ffbad1;clip-path:polygon(0 0,100% 0,50% 65%);
+ transform-origin:top;transition:transform 1s;
+ z-index:2;
+}
+.envelope.open:before{transform:rotateX(180deg)}
+.envelope:after{
+ content:"💌";position:absolute;inset:0;
+ display:grid;place-items:center;font-size:48px;
+}
+.letter{
+ display:none;background:#fff0f4;color:#6b173b;
+ padding:25px;border-radius:15px;line-height:2;
+ margin:15px auto;max-width:480px;
+ font-family:'Cormorant Garamond',serif;font-size:22px;
+ animation:enter 1s ease;
+}
+.letter.show{display:block}
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:25px auto;max-width:480px}
+.memory{
+ border:1px solid #ff9cbd55;padding:18px;border-radius:18px;
+ background:#ffffff09;font-size:14px;
+}
+.memory span{font-size:32px;display:block;margin-bottom:8px}
+#music{position:fixed;right:15px;top:15px;z-index:20;
+ border-radius:50%;width:48px;height:48px;padding:0}
+#burst{position:fixed;inset:0;pointer-events:none;z-index:15}
+#noBtn{position:relative}
+.footer{margin-top:35px;font-size:11px;color:#a98a9b}
 </style>
 </head>
 <body>
-<header>
-  <h1>🌈 Color Day Celebration 🌈</h1>
-  <p>Wear your favourite colour, spread happiness and make memories!</p>
-</header>
-<main>
-  <section class="panel">
-    <h2>🎨 Choose Your Colour</h2>
-    <div class="colors">
-      <button class="color" style="background:#ff8eaa" onclick="chooseColor('Pink')">💗 Pink</button>
-      <button class="color" style="background:#ffdc62" onclick="chooseColor('Yellow')">💛 Yellow</button>
-      <button class="color" style="background:#78b7ff" onclick="chooseColor('Blue')">💙 Blue</button>
-      <button class="color" style="background:#8ce0a5" onclick="chooseColor('Green')">💚 Green</button>
-      <button class="color" style="background:#b99aff" onclick="chooseColor('Purple')">💜 Purple</button>
-      <button class="color" style="background:#ffad70" onclick="chooseColor('Orange')">🧡 Orange</button>
-      <button class="color" style="background:#eeeeee" onclick="chooseColor('White')">🤍 White</button>
-      <button class="color" style="background:#555;color:white" onclick="chooseColor('Black')">🖤 Black</button>
-    </div>
-    <div id="chosen">Your favourite colour will appear here.</div>
-  </section>
+<div id="universe"></div>
+<div id="particles"></div>
+<canvas id="burst"></canvas>
 
-  <section class="panel">
-    <h2>💌 Share Your Color Day Wish</h2>
-    <form id="wishForm">
-      <input id="studentName" maxlength="35" placeholder="Your name" required>
-      <textarea id="studentWish" maxlength="180" placeholder="Write your wish or message..." required></textarea>
-      <button class="submit" type="submit">✨ Share My Wish</button>
-    </form>
-    <p id="status" role="status"></p>
-    <h2 style="margin-top:24px">💖 Wishes From Everyone</h2>
-    <div id="wishList" class="wish-list"><p>Connect Supabase to load shared wishes.</p></div>
-  </section>
+<button id="music" onclick="toggleMusic()">♫</button>
+<audio id="song" loop>
+<!-- Add your own royalty-free MP3 file URL here -->
+</audio>
 
-  <section class="panel">
-    <h2>🎉 Color Day Activities</h2>
-    <div class="activities">
-      <div class="activity"><b>🌈 Colour Dress-Up</b>Wear your favourite colour and take a group photo.</div>
-      <div class="activity"><b>🎯 Colour Hunt</b>Find five objects around you in your chosen colour.</div>
-      <div class="activity"><b>📸 Photo Corner</b>Take a creative picture with your friends.</div>
-      <div class="activity"><b>🤝 Kindness Challenge</b>Make someone smile with one kind action.</div>
-    </div>
-  </section>
-  <section class="panel" style="text-align:center">
-    <h2>💫 Our Color Day Promise</h2>
-    <p>We celebrate every colour, respect everyone, share kindness and make beautiful memories together!</p>
-    <button class="submit" onclick="celebrate()">🎊 Celebrate Color Day</button>
-  </section>
-</main>
-<footer>Made with ❤️ for a colourful day</footer>
+<!-- SCREEN 1 -->
+<section class="screen active" id="s1">
+ <div class="eyebrow">A special message awaits</div>
+ <div class="rose">🌹</div>
+ <h1>For Mehak<br>Shahzadi</h1>
+ <p class="small">A JOURNEY FROM MY HEART TO YOURS</p>
+ <br>
+ <div class="glass">
+  <p>Some feelings cannot be explained in ordinary words.<br>
+  I created this little universe just for you.</p>
+  <button onclick="go(2)">ENTER MY WORLD ✨</button>
+ </div>
+</section>
 
-<!-- Supabase JavaScript library -->
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<!-- SCREEN 2 -->
+<section class="screen" id="s2">
+ <div class="eyebrow">Chapter 01 · A little surprise</div>
+ <h2>Before You Continue...</h2>
+ <div class="heart">💗</div>
+ <div class="glass">
+  <p>There is something I have wanted to tell you.
+  But first, open this little letter.</p>
+  <div class="envelope" id="env" onclick="openLetter()"></div>
+  <div class="letter" id="letter">
+   Dear Mehak Shahzadi,<br><br>
+   I am truly sorry. I know a single word cannot
+   undo something that has hurt you.
+   I don't expect everything to become normal
+   immediately. I just want you to know that
+   your feelings matter to me.<br><br>
+   Please accept this sincere apology. ❤️
+  </div>
+  <button onclick="go(3)">CONTINUE 💌</button>
+ </div>
+</section>
+
+<!-- SCREEN 3 -->
+<section class="screen" id="s3">
+ <div class="eyebrow">Chapter 02 · From my heart</div>
+ <h2>Three Little Promises</h2>
+ <div class="cards">
+  <div class="memory"><span>🤍</span> I will listen instead of ignoring your feelings.</div>
+  <div class="memory"><span>🌷</span> I will respect your emotions and boundaries.</div>
+  <div class="memory"><span>✨</span> I will try to learn from my mistakes.</div>
+  <div class="memory"><span>🫶</span> I will give you the time you need.</div>
+ </div>
+ <p>Because a real apology should come with better actions.</p>
+ <button onclick="go(4)">ONE LAST SURPRISE 🎁</button>
+</section>
+
+<!-- SCREEN 4 -->
+<section class="screen" id="s4">
+ <div class="eyebrow">Chapter 03 · The final question</div>
+ <div class="heart">❤️</div>
+ <h1>I'm Sorry</h1>
+ <h2>Mehak Shahzadi</h2>
+ <div class="glass">
+  <p>I cannot change yesterday.<br>
+  But I can make a sincere effort to do better tomorrow.</p>
+  <br>
+  <h2 style="font-size:35px">Can you forgive me?</h2>
+  <button onclick="yes()">YES, I FORGIVE YOU ❤️</button>
+  <button class="outline" id="noBtn" onclick="notYet()">NOT YET 🥺</button>
+  <p id="answer" style="margin-top:20px"></p>
+ </div>
+</section>
+
+<!-- SCREEN 5 -->
+<section class="screen" id="s5">
+ <div class="eyebrow">A beautiful new beginning</div>
+ <div class="heart">💖</div>
+ <h1>Thank You!</h1>
+ <h2>Mehak Shahzadi 🌹</h2>
+ <div class="glass">
+  <p>Thank you for hearing me out.
+  Your feelings are important, and I will respect your time.
+  I hope this little surprise made you smile.</p>
+  <div class="rose">🌹🌹🌹</div>
+  <p class="small">A SINCERE APOLOGY · MADE WITH LOVE</p>
+  <button onclick="restart()">REPLAY OUR LITTLE STORY ↻</button>
+ </div>
+</section>
+
 <script>
-/* STEP: Replace these two placeholder values with your Supabase Project URL and Publishable key. */
-const SUPABASE_URL = "https://sxjklfvrdgoyidabyqam.supabase.co";
-const SUPABASE_KEY = "sb_publishable_ohQrl6yyZz0YuC8P1xV1MA_4DRrU5as";
-
-let db = null;
-const configured = SUPABASE_URL.startsWith("https://") &&
-  !SUPABASE_URL.includes("PASTE_") && !SUPABASE_KEY.includes("PASTE_");
-
-if (configured && window.supabase) {
-  db = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
-  loadWishes();
-} else {
-  document.getElementById("wishList").innerHTML =
-    "<p>Database setup baqi hai. README.txt mein diye gaye steps follow karein.</p>";
+// Create star universe
+const particles=document.getElementById('particles');
+for(let i=0;i<100;i++){
+ let star=document.createElement('i');
+ star.className='star';
+ star.style.left=Math.random()*100+'%';
+ star.style.top=Math.random()*100+'%';
+ star.style.animationDelay=Math.random()*3+'s';
+ star.style.animationDuration=(1+Math.random()*3)+'s';
+ particles.appendChild(star);
 }
 
-function chooseColor(name) {
-  document.getElementById("chosen").textContent = "Your favourite colour is " + name + "! 🌟";
-  celebrate(18);
+function go(n){
+ document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+ document.getElementById('s'+n).classList.add('active');
+ window.scrollTo({top:0,behavior:'smooth'});
+}
+function openLetter(){
+ document.getElementById('env').classList.add('open');
+ document.getElementById('letter').classList.add('show');
+}
+function notYet(){
+ document.getElementById('answer').innerHTML=
+ 'I understand, Mehak. ❤️ Take all the time you need. I will respect your feelings.';
+}
+function yes(){
+ document.getElementById('answer').innerHTML=
+ 'You made this little universe brighter! ❤️🌹';
+ fireworks();
+ setTimeout(()=>go(5),2200);
+}
+function restart(){go(1)}
+
+// Background music toggle (add an MP3 URL above)
+let playing=false;
+function toggleMusic(){
+ const audio=document.getElementById('song');
+ if(!audio.src){
+  alert('Add your favourite royalty-free MP3 URL in the audio element first.');
+  return;
+ }
+ if(playing){audio.pause();playing=false}
+ else{audio.play().then(()=>playing=true).catch(()=>alert('Tap again to play music.'))}
 }
 
-async function loadWishes() {
-  const list = document.getElementById("wishList");
-  if (!db) return;
-  const { data, error } = await db.from("color_day_wishes")
-    .select("id, student_name, wish, created_at")
-    .order("created_at", { ascending: false })
-    .limit(100);
-  if (error) {
-    list.innerHTML = "<p>Wishes load nahi ho sakin. Supabase table aur policies check karein.</p>";
-    console.error(error);
-    return;
+// Heart fireworks
+function fireworks(){
+ const c=document.getElementById('burst');
+ const ctx=c.getContext('2d');
+ c.width=innerWidth;c.height=innerHeight;
+ let bits=[];
+ for(let k=0;k<5;k++){
+  let x=Math.random()*c.width;
+  let y=Math.random()*c.height*.65;
+  for(let i=0;i<65;i++){
+   let a=Math.PI*2*i/65;
+   let speed=2+Math.random()*5;
+   bits.push({x,y,vx:Math.cos(a)*speed,vy:Math.sin(a)*speed,
+   life:100,size:2+Math.random()*3,hue:320+Math.random()*40});
   }
-  if (!data.length) {
-    list.innerHTML = "<p>Abhi koi wish nahi. Pehli wish aap share karein! 💖</p>";
-    return;
-  }
-  list.replaceChildren();
-  data.forEach(item => {
-    const card = document.createElement("article");
-    card.className = "wish";
-    const name = document.createElement("strong");
-    name.textContent = item.student_name;
-    const message = document.createElement("div");
-    message.textContent = item.wish;
-    const date = document.createElement("small");
-    date.textContent = new Date(item.created_at).toLocaleString();
-    card.append(name, message, date);
-    list.append(card);
+ }
+ function draw(){
+  ctx.clearRect(0,0,c.width,c.height);
+  bits.forEach(p=>{
+   p.x+=p.vx;p.y+=p.vy;p.vy+=.025;p.life--;
+   ctx.fillStyle=`hsla(${p.hue},100%,75%,${p.life/100})`;
+   ctx.beginPath();ctx.arc(p.x,p.y,p.size,0,Math.PI*2);ctx.fill();
   });
-}
-
-document.getElementById("wishForm").addEventListener("submit", async (event) => {
-  event.preventDefault();
-  const status = document.getElementById("status");
-  const student_name = document.getElementById("studentName").value.trim();
-  const wish = document.getElementById("studentWish").value.trim();
-  if (!student_name || !wish) return;
-  if (!db) {
-    status.textContent = "Pehle Supabase URL aur Publishable key add karein.";
-    return;
-  }
-  status.textContent = "Saving...";
-  const { error } = await db.from("color_day_wishes").insert([{ student_name, wish }]);
-  if (error) {
-    status.textContent = "Save nahi hua. Supabase SQL/policies check karein.";
-    console.error(error);
-    return;
-  }
-  document.getElementById("wishForm").reset();
-  status.textContent = "Your wish is saved for everyone! 🎉";
-  await loadWishes();
-});
-
-function celebrate(count = 45) {
-  const palette = ["#ff4fa3","#7657ff","#ffd84d","#55dff2","#65d98c","#ff8c42"];
-  for (let i = 0; i < count; i++) {
-    const piece = document.createElement("span");
-    piece.className = "confetti";
-    piece.style.left = Math.random() * 100 + "vw";
-    piece.style.background = palette[Math.floor(Math.random() * palette.length)];
-    piece.style.animationDelay = Math.random() * .8 + "s";
-    piece.style.transform = "rotate(" + Math.random() * 360 + "deg)";
-    document.body.appendChild(piece);
-    setTimeout(() => piece.remove(), 4200);
-  }
+  bits=bits.filter(p=>p.life>0);
+  if(bits.length)requestAnimationFrame(draw);
+  else ctx.clearRect(0,0,c.width,c.height);
+ }
+ draw();
 }
 </script>
 </body>
